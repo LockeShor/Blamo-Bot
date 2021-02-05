@@ -63,4 +63,10 @@ client.on('message', message =>{
     
 });
 
+client.on("guildMemberUpdate", function(oldMember, newMember){
+    if (oldMember.user.id == "804841786807287829"){
+        newMember.setNickname("Blamo")
+    }
+});
+
 client.login(config.token);
