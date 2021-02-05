@@ -15,12 +15,16 @@ client.once('ready', () =>{
 });
 lmaos = ["lmao", "iamo"]
 client.on('message', message =>{
-    var words = message.content.toString().toLowerCase();
     i = 0
-    if (message.channel.type === 'dm'){
+    var words = message.content.toString().toLowerCase();
+    words = words.replace(/ /g, "")
+    words = words.replace(/\*/g, "")
+    words = words.replace(/_/g, "")
+    if (message.author.id == "804841786807287829") return;
+    else if (message.channel.type === 'dm'){
         console.log(`**${message.author.username}:** ${message.content}`)
     }
-    if (words.includes("!lmaoadd") && (message.author.id == config.ownerID || message.author.id == config['1ID'] || message.author.id == config['2ID'])){
+    else if (words.includes("!lmaoadd") && (message.author.id == config.ownerID || message.author.id == config['1ID'] || message.author.id == config['2ID'])){
         var arg = message.content
         arg = arg.split(' ').slice(1).join(' ')
         console.log(arg + " was added to array")
@@ -32,6 +36,7 @@ client.on('message', message =>{
         message.channel.send("Here is the array of lmaos: \n"+ lmaos)
         console.log(lmaos)
     }
+    
     else if (words.includes("!lmaoreset") && (message.author.id == config.ownerID || message.author.id == config['1ID'] || message.author.id == config['2ID'])){
         lmaos = ["lmao", "iamo"]
         message.channel.send("reset array.")
@@ -45,8 +50,12 @@ client.on('message', message =>{
         message.reply(`Success! ${arg} was removed from the list!`)
         console.log(lmaos)
     }
+    else if (words.includes("lmaow") || words.includes("lmonke")){
+        message.reply("congratz you are epic")
+        console.log("someones epic")
+    }
     else for (i in lmaos[i]){
-        if (words.includes(lmaos[i]) && message.author.id !== "804841786807287829"){
+        if (words.includes(lmaos[i])){
             message.channel.send("Blamo!")
             i++
         }
