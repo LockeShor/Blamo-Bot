@@ -4,15 +4,33 @@ const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]}
 
 const config = require("./config.json");
 
+const fs = require('fs');
+
 const ms = require('ms');
 const { count } = require('console');
 
-client.commands = new Discord.Collection();
+const jsonfile = require('jsonfile')
 
+client.commands = new Discord.Collection();
+ 
 client.once('ready', () =>{
     console.log('Bot activated!');
-    
+     const guildNames = client.guilds.cache.map(g => g.id)
+     for (g = 0; g < guildNames.length; g++) {
+        lmaoarray = ["lmao", "iamo", "breh"]
+
+        const file = `./lmaoarrays/guild_${guildNames[g].toString()}.json`
+
+        const obj = JSON.stringify(lmaoarray)
+        
+        jsonfile.writeFileSync(file, obj)
+        
+        results = JSON.parse(jsonfile.readFileSync(`./lmaoarrays/guild_${guildNames[g].toString()}.json`))     
+        console.log(results)
+     }
 });
+
+
 lmaos = ["lmao", "iamo"]
 client.on('message', message =>{
     i = 0

@@ -1,0 +1,6 @@
+var fileContent = JSON.stringify(lmaoarray);
+        var filepath = `./lmaoarrays/guild_${guildNames[g].toString()}.json`;
+        fs.writeFile(filepath, fileContent, (err) => {
+            if (err) throw err;
+            console.log("The file was succesfully saved!");
+});
