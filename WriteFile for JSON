@@ -1,6 +1,11 @@
-var fileContent = JSON.stringify(lmaoarray);
-        var filepath = `./lmaoarrays/guild_${guildNames[g].toString()}.json`;
-        fs.writeFile(filepath, fileContent, (err) => {
-            if (err) throw err;
-            console.log("The file was succesfully saved!");
-});
+const file = `./lmaoarrays/guild_${guildNames[g].toString()}.json`
+
+const obj = JSON.stringify(lmaoarray)
+        
+jsonfile.writeFileSync(file, obj)
+        
+ReadFile = JSON.parse(jsonfile.readFileSync(`./lmaoarrays/guild_${guildNames[g].toString()}.json`))    
+
+
+
+"{\"list\":[\"lmao\",\"iamo\",\"breh\"]}"

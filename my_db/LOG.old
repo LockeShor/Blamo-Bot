@@ -1,0 +1,14 @@
+2021/02/07-09:15:03.657 1374 Recovering log #38
+2021/02/07-09:15:03.657 1374 Level-0 table #40: started
+2021/02/07-09:15:03.659 1374 Level-0 table #40: 237 bytes OK
+2021/02/07-09:15:03.662 1374 Delete type=0 #38
+2021/02/07-09:15:03.662 1374 Delete type=3 #36
+2021/02/07-09:15:03.663 a68c Compacting 4@0 + 1@1 files
+2021/02/07-09:15:03.666 a68c Generated table #42@0: 1 keys, 237 bytes
+2021/02/07-09:15:03.666 a68c Compacted 4@0 + 1@1 files => 237 bytes
+2021/02/07-09:15:03.667 a68c compacted to: files[ 0 1 0 0 0 0 0 ]
+2021/02/07-09:15:03.667 a68c Delete type=2 #29
+2021/02/07-09:15:03.667 a68c Delete type=2 #31
+2021/02/07-09:15:03.667 a68c Delete type=2 #34
+2021/02/07-09:15:03.668 a68c Delete type=2 #37
+2021/02/07-09:15:03.668 a68c Delete type=2 #40
